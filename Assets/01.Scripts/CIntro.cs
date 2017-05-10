@@ -17,7 +17,7 @@ public class CIntro : MonoBehaviour
 
     public void OnClickCredit()
     {
-        if(objCreditPanel.active)
+        if(objCreditPanel.activeSelf)
         {
             objCreditPanel.SetActive( false );
         }

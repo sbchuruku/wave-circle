@@ -91,7 +91,8 @@ public class CWave : MonoBehaviour
         if ( !_lrPosList.Contains( _TrChild.position ) )
         {
             _lrPosList.Add( _TrChild.position );
-            _lr.SetVertexCount( _lrPosList.Count );
+//             _lr.SetVertexCount( _lrPosList.Count );          // Legacy
+            _lr.positionCount = _lrPosList.Count;
             _lr.SetPosition( _lrPosList.Count - 1, (Vector3)_lrPosList[_lrPosList.Count - 1] );
         }
     }

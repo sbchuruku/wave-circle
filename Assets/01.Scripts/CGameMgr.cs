@@ -84,7 +84,7 @@ public class CGameMgr : MonoBehaviour
 
     void SelectStartPos()
     {
-        if( !_bPosSel && _trPosSel.gameObject.active )
+        if( !_bPosSel && _trPosSel.gameObject.activeSelf )
             return;
 
         _trPosSel.Rotate( new Vector3(0,0,_fPosSelRotSpeed*Time.deltaTime) );
@@ -163,7 +163,9 @@ public class CGameMgr : MonoBehaviour
 
         _objGaugeSetWave = obj.GetComponent<CWave>();
         Color lrColor = new Color(Random.Range(0f,1f),Random.Range(0f,1f),Random.Range(0f,1f));
-        _objGaugeSetWave._lr.SetColors( lrColor, lrColor );
+//         _objGaugeSetWave._lr.SetColors( lrColor, lrColor );          // Legacy
+        _objGaugeSetWave._lr.startColor = lrColor;
+        _objGaugeSetWave._lr.endColor = lrColor;
 
         _trPosSel.gameObject.SetActive( false );
         _bPosSel = false;
